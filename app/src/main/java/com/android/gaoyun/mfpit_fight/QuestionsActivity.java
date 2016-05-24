@@ -102,6 +102,8 @@ public class QuestionsActivity extends AppCompatActivity {
             answerDataStream.close();
             answerStream.close();
 
+            ans.setChecked(false);
+
         } catch (UnknownHostException e) {
             System.out.println("Host exception.");
             e.printStackTrace();
@@ -112,6 +114,10 @@ public class QuestionsActivity extends AppCompatActivity {
             System.out.println("Another exception");
             e.printStackTrace();
         };
+
+        RadioGroup ansGroup = (RadioGroup) findViewById(R.id.answers);
+        RadioButton ans = (RadioButton) findViewById(ansGroup.getCheckedRadioButtonId());
+        ans.setChecked(false);
 
     }
 }

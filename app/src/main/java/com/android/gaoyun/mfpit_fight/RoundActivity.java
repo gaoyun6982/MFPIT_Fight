@@ -3,6 +3,7 @@ package com.android.gaoyun.mfpit_fight;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -38,6 +39,7 @@ public class RoundActivity extends AppCompatActivity {
                 System.out.println("Server answered for join sec. player");
                 Intent gameIntent = new Intent(RoundActivity.this, GameActivity.class);
                 startActivity(gameIntent);
+                finishActivity(0);
             }
 
         } catch (UnknownHostException e) {
@@ -54,4 +56,12 @@ public class RoundActivity extends AppCompatActivity {
     }
 
 
+    public void staffClickRound(View view) {
+
+        System.out.println("Staff Only!");
+        Intent gameIntent = new Intent(RoundActivity.this, GameActivity.class);
+        startActivity(gameIntent);
+        finishActivity(1);
+
+    }
 }
