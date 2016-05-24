@@ -4,4 +4,11 @@
     <string name="new_game">Начать игру</string>
 
     <string name="wait">Ожидаем второго игрока</string>
+
+    <string name="start_round">Начать раунд</string>
+    <string name="score">Счёт</string>
+    <string name="my_score">Moй</string>
+    <string name="my_score_num">0</string>
+    <string name="opponent_score">Соперника</string>
+    <string name="opponent_score_num">0</string>
 </resources>

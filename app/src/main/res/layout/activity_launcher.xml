@@ -9,12 +9,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.android.gaoyun.mfpit_fight.LauncherActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logoImage"
+        android:src="@drawable/logo"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/new_game"
         android:id="@+id/buttonNewGame"
         android:onClick="startNewGame"
+        android:layout_below="@+id/logoImage"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="106dp"
         android:layout_alignParentRight="true"

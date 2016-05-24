@@ -31,10 +31,13 @@ public class RoundActivity extends AppCompatActivity {
 
             transition = dataInputStream.readBoolean();
 
+            dataInputStream.close();
+            inputStream.close();
+
             if(transition){
-                Intent roundIntent = new Intent(RoundActivity.this, LauncherActivity.class);
-                startActivity(roundIntent);
                 System.out.println("Server answered for join sec. player");
+                Intent gameIntent = new Intent(RoundActivity.this, GameActivity.class);
+                startActivity(gameIntent);
             }
 
         } catch (UnknownHostException e) {
