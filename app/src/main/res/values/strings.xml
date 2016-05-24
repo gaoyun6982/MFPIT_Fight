@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MFPIT_Fight</string>
+    <string name="app_title">Борьба умов ver. МФПИТ</string>
+    <string name="new_game">Начать игру</string>
+
+    <string name="wait">Ожидаем второго игрока</string>
+</resources>
