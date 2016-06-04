@@ -13,21 +13,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/logoImage"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxHeight="20dp"
         android:text="@string/new_game"
         android:id="@+id/buttonNewGame"
         android:onClick="startNewGame"
-        android:layout_below="@+id/logoImage"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="106dp"
+        android:layout_marginBottom="56dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textColor="@color/colorWhiteBlue"
         android:background="@color/colorAccent" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:id="@+id/ipText"
+        android:layout_above="@+id/portText"
+        android:layout_alignParentStart="true"
+        android:hint="IP" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/portText"
+        android:layout_above="@+id/buttonNewGame"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:hint="Порт" />
+
 </RelativeLayout>

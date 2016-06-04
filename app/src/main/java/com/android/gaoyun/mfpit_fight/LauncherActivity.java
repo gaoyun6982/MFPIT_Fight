@@ -3,20 +3,23 @@ package com.android.gaoyun.mfpit_fight;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.UUID;
 
 public class LauncherActivity extends AppCompatActivity {
 
     Button newGameButton;
+
+    EditText ipAddrText;
+    EditText portText;
+
+    public static String ipAddr = "";
+    public static int port = 0;
+
     public static UUID client_id = null;
 
     @Override
@@ -27,37 +30,23 @@ public class LauncherActivity extends AppCompatActivity {
 
         newGameButton = (Button)findViewById(R.id.buttonNewGame);
 
+        ipAddrText = (EditText)findViewById(R.id.ipText);
+        portText = (EditText)findViewById(R.id.portText);
+
+        ipAddrText.setInputType(InputType.TYPE_CLASS_PHONE);
+        portText.setInputType(InputType.TYPE_CLASS_NUMBER);
+
     }
 
     public void startNewGame(View view) {
 
-        try(Socket serverSocket= new Socket(InetAddress.getLocalHost(), 50000)) {
-
-            System.out.println("Connection to server");
-
-            client_id = UUID.randomUUID();
-            System.out.println("Client ID: "+ client_id);
-
-            OutputStream outputStream = serverSocket.getOutputStream();
-            DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-            System.out.println("Output stream initialized.");
-
-            dataOutputStream.writeUTF(client_id.toString());
-            System.out.println("Client ID send.");
-
-        } catch (UnknownHostException e) {
-            System.out.println("Host exception.");
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.out.println("IO exception.");
-            e.printStackTrace();
-        } catch (Exception e){
-            System.out.println("Another exception");
-            e.printStackTrace();
-        };
+        ipAddr = ipAddrText.getText().toString();
+        port = Integer.parseInt(portText.getText().toString());
 
         Intent roundIntent = new Intent(LauncherActivity.this, RoundActivity.class);
         startActivity(roundIntent);
+
+        //finish();
 
     }
 }

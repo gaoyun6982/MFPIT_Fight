@@ -15,23 +15,26 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Вопрос"
         android:id="@+id/questionText"
+        android:textSize="14dp"
+        android:textAlignment="center"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="20dp"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:id="@+id/answers"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true">
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ответ 1"
-        android:id="@+id/radioButton"
-        android:layout_below="@+id/ans1Text"
+        android:id="@+id/ans1Text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="84dp" />
 
