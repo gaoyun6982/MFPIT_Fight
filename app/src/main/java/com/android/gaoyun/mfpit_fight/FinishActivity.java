@@ -98,7 +98,7 @@ public class FinishActivity extends AppCompatActivity {
                         String scroOpp = oppScore+"";
 
                         myNum.setText(scoreMy);
-                        oppNum.setText(scroOppФвв);
+                        oppNum.setText(scroOpp);
 
                     }
 
